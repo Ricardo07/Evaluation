@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CJR-aW-OIu">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contacts Table View Controller-->
+        <scene sceneID="tzC-5L-O2t">
+            <objects>
+                <tableViewController id="CJR-aW-OIu" customClass="ContactsTableViewController" customModule="Evaluation" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="112" sectionHeaderHeight="18" sectionFooterHeight="18" id="d90-9o-5B1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" rowHeight="100" id="il8-f9-QAH" customClass="ContactCell" customModule="Evaluation" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="49.5" width="600" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="il8-f9-QAH" id="Ach-QV-zFx">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="nkp-vX-0le">
+                                            <rect key="frame" x="8" y="20" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="8uQ-uV-NfF"/>
+                                                <constraint firstAttribute="height" constant="60" id="GEe-0I-ifg"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harrison Hamilton" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="7BM-Ot-vjL">
+                                            <rect key="frame" x="76" y="38" width="476" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTe-FE-MEC">
+                                            <rect key="frame" x="560" y="34" width="32" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="oCy-Qg-8sc"/>
+                                                <constraint firstAttribute="width" constant="32" id="qoi-6Y-m2A"/>
+                                            </constraints>
+                                            <color key="tintColor" red="0.89411764705882357" green="0.090196078431372548" blue="0.3843137254901961" alpha="1" colorSpace="calibratedRGB"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="nkp-vX-0le" firstAttribute="centerY" secondItem="Ach-QV-zFx" secondAttribute="centerY" id="5Y4-3r-8KB"/>
+                                        <constraint firstItem="aTe-FE-MEC" firstAttribute="leading" secondItem="7BM-Ot-vjL" secondAttribute="trailing" constant="8" id="5cb-Ut-0D7"/>
+                                        <constraint firstItem="nkp-vX-0le" firstAttribute="leading" secondItem="Ach-QV-zFx" secondAttribute="leadingMargin" id="7jR-yM-MAg"/>
+                                        <constraint firstItem="aTe-FE-MEC" firstAttribute="centerY" secondItem="Ach-QV-zFx" secondAttribute="centerY" id="FWy-kg-Kdu"/>
+                                        <constraint firstItem="7BM-Ot-vjL" firstAttribute="leading" secondItem="nkp-vX-0le" secondAttribute="trailing" constant="8" id="Kdm-GA-C5h"/>
+                                        <constraint firstItem="aTe-FE-MEC" firstAttribute="trailing" secondItem="Ach-QV-zFx" secondAttribute="trailingMargin" id="tIY-Se-EpP"/>
+                                        <constraint firstItem="7BM-Ot-vjL" firstAttribute="centerY" secondItem="Ach-QV-zFx" secondAttribute="centerY" id="yTS-Tp-G9G"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="contactAddButton" destination="aTe-FE-MEC" id="6aD-AF-GNH"/>
+                                    <outlet property="contactImageView" destination="nkp-vX-0le" id="Se3-Mn-OJA"/>
+                                    <outlet property="contactNameLabel" destination="7BM-Ot-vjL" id="NTO-xF-31p"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CJR-aW-OIu" id="B8Y-VQ-G3t"/>
+                            <outlet property="delegate" destination="CJR-aW-OIu" id="Z6a-Nk-ZvE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Nt-V1-QCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="923" y="451"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="profile_pic" width="1024" height="1024"/>
+    </resources>
+</document>
