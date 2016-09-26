@@ -3,13 +3,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderSectionView" customModule="Evaluation" customModuleProvider="target">
             <connections>
-                <outlet property="headerConnectedImage" destination="S9E-Y7-2tZ" id="Ssq-rI-WTY"/>
+                <outlet property="headerConnectedButton" destination="GQy-BN-JUq" id="iaX-8Q-0c0"/>
                 <outlet property="headerIconImage" destination="7eZ-WN-A9l" id="uGp-oa-EF3"/>
                 <outlet property="headerLabel" destination="2g1-lC-KRm" id="5LQ-qU-3J7"/>
                 <outlet property="view" destination="iN0-l3-epB" id="giZ-sz-HRP"/>
@@ -17,40 +16,43 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="355" height="79"/>
+            <rect key="frame" x="0.0" y="0.0" width="355" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Down" translatesAutoresizingMaskIntoConstraints="NO" id="S9E-Y7-2tZ">
-                    <rect key="frame" x="331" y="32" width="16" height="16"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="S9E-Y7-2tZ" secondAttribute="height" multiplier="1:1" id="AeB-T5-Atv"/>
-                        <constraint firstAttribute="height" constant="16" id="H31-Ak-AIm"/>
-                        <constraint firstAttribute="width" constant="16" id="pCv-v0-YLX"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address book contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g1-lC-KRm">
-                    <rect key="frame" x="48" y="29" width="275" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Contacts" translatesAutoresizingMaskIntoConstraints="NO" id="7eZ-WN-A9l">
-                    <rect key="frame" x="8" y="24" width="32" height="32"/>
+                    <rect key="frame" x="8" y="14" width="32" height="32"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="32" id="KDj-jg-Qja"/>
                         <constraint firstAttribute="height" constant="32" id="xPW-eC-6Oj"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQy-BN-JUq">
+                    <rect key="frame" x="323" y="18" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="PZM-gJ-CcM"/>
+                        <constraint firstAttribute="width" constant="24" id="Spt-bN-DvA"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="Down"/>
+                    <connections>
+                        <action selector="CollapseSection:" destination="-1" eventType="touchUpInside" id="chm-Od-ZAj"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address book contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g1-lC-KRm">
+                    <rect key="frame" x="48" y="19" width="258" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="S9E-Y7-2tZ" firstAttribute="leading" secondItem="2g1-lC-KRm" secondAttribute="trailing" constant="8" id="1e9-01-Mv5"/>
                 <constraint firstItem="2g1-lC-KRm" firstAttribute="centerY" secondItem="7eZ-WN-A9l" secondAttribute="centerY" id="7bJ-xZ-GiS"/>
                 <constraint firstItem="7eZ-WN-A9l" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="FpW-BE-GFx"/>
-                <constraint firstItem="S9E-Y7-2tZ" firstAttribute="centerY" secondItem="2g1-lC-KRm" secondAttribute="centerY" id="SZ7-Ys-XhG"/>
                 <constraint firstItem="2g1-lC-KRm" firstAttribute="leading" secondItem="7eZ-WN-A9l" secondAttribute="trailing" constant="8" id="VS6-Fa-XKV"/>
-                <constraint firstAttribute="trailing" secondItem="S9E-Y7-2tZ" secondAttribute="trailing" constant="8" id="e4d-Zd-jdf"/>
+                <constraint firstAttribute="trailing" secondItem="GQy-BN-JUq" secondAttribute="trailing" constant="8" id="hZw-hs-I97"/>
+                <constraint firstItem="GQy-BN-JUq" firstAttribute="leading" secondItem="2g1-lC-KRm" secondAttribute="trailing" constant="17" id="jej-jF-AFt"/>
                 <constraint firstItem="7eZ-WN-A9l" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="peB-mR-1yc"/>
+                <constraint firstItem="GQy-BN-JUq" firstAttribute="centerY" secondItem="2g1-lC-KRm" secondAttribute="centerY" id="q5J-za-wYU"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

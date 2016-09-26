@@ -8,12 +8,20 @@
 
 import UIKit
 
+protocol ContactHeaderSectionViewDelegate {
+  func didColapseSectionAt(section: Int)
+}
+
+
 class HeaderSectionView: UIView {
 
   @IBOutlet var view: UIView!
   @IBOutlet weak var headerIconImage: UIImageView!
   @IBOutlet weak var headerLabel: UILabel!
-  @IBOutlet weak var headerConnectedImage: UIImageView!
+  @IBOutlet weak var headerConnectedButton: UIButton!
+  
+  var delegate:ContactHeaderSectionViewDelegate? = nil
+  var section: Int = -1
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -29,5 +37,11 @@ class HeaderSectionView: UIView {
     NSBundle.mainBundle().loadNibNamed("HeaderSectionView", owner: self, options: nil)
     self.bounds = view.bounds
     self.addSubview(view)
+  }
+  
+  @IBAction func CollapseSection(sender: UIButton) {
+    if let delegate = delegate where section >= 0 {
+      delegate.didColapseSectionAt(section)
+    }
   }
 }
